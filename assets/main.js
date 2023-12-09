@@ -404,7 +404,7 @@ var ddl=[{id:"modern", value: "Modern"}, {id:"minimalist", value: "Minimalist"},
 function unosCh(){
     for(element of chbox){
         let elCh= document.createElement("div");
-        elCh.classList.add("col-4");
+        elCh.classList.add("col-lg-4", "col-6");
         let InCh= document.createElement("input");
         InCh.type="checkbox";
         InCh.id=element.id;
@@ -433,4 +433,130 @@ if(document.getElementById("forma")){
     unosDdl();
 }
 
+//expandable menu
+if(document.getElementById("questions")){
+    $(document).ready(function(){
+        $( '#menu > li > ul' )
+            .hide()
+            .click(function( e ){
+                e.stopPropagation();
+            });
+            $('#menu > li > a').click(function (e) {
+                e.preventDefault();
+                var $submenu = $(this).siblings('ul');
+                $submenu.slideToggle();
+            });
+    });
+}
 
+  //plug-in jquery Scroll-Up button 
+  $(document).ready(function() {
+    $('#scrollUp').click(function() {
+      $.scrollTo(0, 100); 
+    });
+  
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('#scrollUp').fadeIn();
+      } else {
+        $('#scrollUp').fadeOut();
+      }
+    });
+  });
+ 
+
+  //form validation
+
+  var regExImePrezime =/^[A-ZŠĐŽĆČ][a-zžđšćč]{1,}(\s[A-ZŠĐŽĆČ][a-zžđšćč]{1,})*/;
+  var regExMejl =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+  var fName=document.getElementById("fName");
+  var ime=document.getElementById("ime");
+  var prezime=document.getElementById("prezime");
+  submit.disabled=true;
+  
+
+  if(document.getElementById("forma")){
+
+    //ime
+    var mess = document.createElement("p");
+    mess.textContent="At least 2 letters with the capital first letter.";
+    mess.classList.add("p-message");
+    ime.appendChild(mess);
+    mess.classList.add("d-none");
+
+    fName.addEventListener("change", function(){
+        if(!regExImePrezime.test(fName.value)){
+            mess.classList.remove("d-none");
+            }
+        else{
+                mess.classList.add("d-none");
+                
+        }
+    })
+
+    //prezime
+    var mess1 = document.createElement("p");
+    mess1.textContent="At least 2 letters with the capital first letter.";
+    prezime.appendChild(mess1);
+    mess1.classList.add("p-message");
+    mess1.classList.add("d-none");
+
+    lName.addEventListener("change", function(){
+        if(!regExImePrezime.test(lName.value)){
+            mess1.classList.remove("d-none");
+            }
+        else{
+                mess1.classList.add("d-none");
+                
+        }
+    })
+
+    //mejl
+    var mess2 = document.createElement("p");
+    mess2.textContent="Needs usual format of a mail.";
+    mejl.appendChild(mess2);
+    mess2.classList.add("d-none");
+    mess2.classList.add("p-message");
+
+    mail.addEventListener("change", function(){
+        if(!regExMejl.test(mail.value)){
+            mess2.classList.remove("d-none");
+            }
+        else{
+                mess2.classList.add("d-none");
+                
+        }
+    })
+
+    //style
+    var mess3 = document.createElement("p");
+    mess3.textContent="Style has to be selected.";
+    stil.appendChild(mess3);
+    mess3.classList.add("p-message");
+    mess3.classList.add("d-none");
+
+    style.addEventListener("change", function(){
+        if(style.selectedIndex==0){
+            mess3.classList.remove("d-none");
+        }
+        else{
+            mess3.classList.add("d-none");
+        }
+    })
+
+    //button disabled 
+    forma.addEventListener("change", function(){
+        if(style.selectedIndex!=0 && regExMejl.test(mail.value) && regExImePrezime.test(fName.value) && regExImePrezime.test(lName.value)){
+            submit.disabled=false;
+        }
+        else{
+            submit.disabled=true;
+        }
+    })
+
+  }
+
+ 
+
+ 

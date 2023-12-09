@@ -102,6 +102,7 @@ h2{
 .row{
     margin: 0px auto !important;
 }
+
 //sale timer
 
 .bg-main{
@@ -132,7 +133,9 @@ h2{
 .mainC{
     color: @main;
 }
+
 //futer
+
 #futer{
     padding: 5px;
     div{
@@ -157,7 +160,7 @@ h2{
 .form-control{
   appearance: menulist-button !important;
 }
-#max, #min{
+#min{
     display: inline !important;
     width: 50px;
     margin-top: 10px;
@@ -220,6 +223,58 @@ h2{
         margin-top: 5px;
         font-size: 18px;
     }
+}
+#questions{
+    #que{
+        margin: 20px !important;
+    }
+}
+#menu li { 
+    a{
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        border-top: 1px solid @main;
+        text-decoration: none;
+        padding: 10px;
+        color: @main;
+    }
+    ul{
+        list-style-type: none;
+        li{
+            padding: 5px;
+        }
+    }
+}
+#menu > li:last-child{
+    border-bottom: 1px solid @main;
+}
+
+#scrollUp{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: @detail;
+    border: 1px solid @detail;
+    color: white;
+    padding: 2px 9px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+.p-message{
+    font-size: 11px;
+    color: @detail;
+    margin-bottom: 0px;
+}
+
+//author
+
+#author{
+    width: 400px;
+}
+#info p:nth-child(odd){
+    font-weight: bold;
+    color: @detail;
 }
 
 //responsive
@@ -285,6 +340,12 @@ h2{
                 margin: 2px;
             }
         }
+    }
+    #menu > li> ul > li{
+        font-size: 12px;
+    }
+    #menu > li a{
+        font-size: 15px;
     }
     #futer{
         p, i{

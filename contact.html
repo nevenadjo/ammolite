@@ -24,6 +24,8 @@
 
         <!--jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+
 
         <!-- bootstrap css-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
@@ -52,19 +54,19 @@
 
             <div id="forma" class="col-11 col-md-5">
                 <form action="obrada.php" class="row container-fluid">
-                    <div class="col-6">
+                    <div class="col-6" id="ime">
                         <label for="fName" class="form-label">First Name *</label>
                         <input type="text" id="fName" class="form-control"/>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" id="prezime">
                         <label for="lName" class="form-label">Last Name *</label>
                         <input type="text" id="lName" class="form-control"/>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" id="mejl">
                         <label for="mail" class="form-label">E-mail *</label>
                         <input type="text" id="mail" class="form-control"/>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" id="stil">
                         <label for="style" class="form-label">Style: *</label>
                         <select name="style" id="style" class="form-control">
                             <option value="0" id="0">Select style</option>
@@ -75,13 +77,9 @@
                     </div>
                     <div id="price" class="col-12 row">
                         <p class="col-12 ps-0" id="formP2">Price Range: <span class="l-gray">(optional)</span></p>
-                        <div id="minPrice" class="col-4 ps-0">
-                            <label for="min" >From:</label>
+                        <div id="minPrice" class="col-12 ps-0">
+                            <label for="min" >Max price:</label>
                             <input type="text" id="min" class="form-control"/>
-                        </div>
-                        <div id="maxPrice" class="col-4 ps-0">
-                            <label for="max">To:</label>
-                            <input type="text" id="max" class="form-control"/>
                         </div>
                     </div>
                     <textarea name="message" id="message" cols="30" rows="5" placeholder="Additional details.. (optional)" class="form-control col-12"></textarea>
@@ -89,6 +87,35 @@
                 </form>
             </div>
         </div>
+
+        <div id="questions" class="row d-flex justify-content-center">
+            <h2 class="text-center col-12" id="que">Frequently <span class="colorD">Asked</span> Questions</h2>
+            <ul class="list-unstyled col-10" id="menu">
+                <li><a href="#">+ Do I get a warranty? </a>
+                    <ul>
+                        <li>Under our warranty, we've got your back. This means that for 2 years from the date of purchase, we will take care of your product if any damage to the material or the workmanship of the jewelry occurs.<br/>Please submit any warranty requests via email: <span class="colorD">ammolite-jewelry&commat;gmail&period;com</span> our team will follow up with you within 1-2 business days with additional details.</li>
+                    </ul>
+                </li>
+                <li><a href="#">+ How do I use my polishing cloth?</a>
+                    <ul>
+                        <li>To keep your piece looking its best, gently rub the surface with the polishing cloth. Always wash your hands after use to ensure the cleaning agent is removed. Never wash the polishing cloth as it will lose its effectiveness.</li>
+                    </ul>
+                </li>
+                <li><a href="#">+ How do I determine ring size?</a>
+                    <ul>
+                        <li>While we can never be certain of your size without having physically measured your finger or trying on one of our rings in store, we do have a few handy tricks that may help you determine either your ring sizer or the ring size of a loved one!
+                        If you already have a ring with the perfect fit, whether it was gifted or an heirloom piece, grab a ruler and measure the internal diameter. </li>
+                    </ul>
+                </li>
+                <li><a href="#">+ Can I cancel or update my order?</a>
+                    <ul>
+                        <li>As our team works hard to get your order dispatched as quickly as possible, we cannot guarantee we will be able to cancel or update your order upon request. Please reach via email <span class="colorD">ammolite-jewelry&commat;gmail&period;com</span> and we will do our best to support you.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <a id="scrollUp" href="#top"><i class="fas fa-arrow-up"></i></a>
 
         <footer class="row container-fluid d-flex justify-content-between border-top" id="futer"></footer>
        
