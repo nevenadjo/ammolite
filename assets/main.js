@@ -473,6 +473,7 @@ if(document.getElementById("questions")){
   var fName=document.getElementById("fName");
   var ime=document.getElementById("ime");
   var prezime=document.getElementById("prezime");
+  var submit=document.getElementById("submit");
   submit.disabled=true;
   
 
