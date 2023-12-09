@@ -297,7 +297,7 @@ if(document.getElementById("block2")){
 //niz ikonica
 var footerSocials=[{icon: "<i class=\"fa-brands fa-facebook-f\"><\/i>", href: "www.facebook.com"}, {icon: "<i class=\"fa-brands fa-instagram\"><\/i>", href: "www.instagram.com"}, {icon: "<i class=\"fa-brands fa-x-twitter\"><\/i>", href: "www.x.com"}];
 
-var footerDoc=[{icon: "<i class=\"fa-regular fa-file\"><\/i>", href: "www.facebook.com"}, {icon: "<i class=\"fa-solid fa-sitemap\"><\/i>", href: "www.instagram.com"}];
+var footerDoc=[{icon: "<i class=\"fa-regular fa-file\"><\/i>", href: "dokumentacija.pdf"}, {icon: "<i class=\"fa-solid fa-sitemap\"><\/i>", href: "sitemap.xml"}];
 
 //kreiranje futera i ucitavanje sadrzaja
 window.addEventListener("load", function(){
