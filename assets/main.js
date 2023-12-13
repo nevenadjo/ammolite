@@ -469,6 +469,7 @@ if(document.getElementById("questions")){
 
   var regExImePrezime =/^[A-ZŠĐŽĆČ][a-zžđšćč]{1,}(\s[A-ZŠĐŽĆČ][a-zžđšćč]{1,})*/;
   var regExMejl =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  var regExNum = /^\d+$/;
 
   var fName=document.getElementById("fName");
   var ime=document.getElementById("ime");
@@ -546,16 +547,38 @@ if(document.getElementById("questions")){
         }
     })
 
+    //range
+    var mess4 = document.createElement("p");
+    mess4.textContent="Has to be a number.";
+    document.getElementById("minPrice").appendChild(mess4);
+    mess4.classList.add("p-message");
+    mess4.classList.add("d-none");
+
+    document.getElementById("minPrice").addEventListener("change", function(){
+        if(!regExNum.test(document.getElementById("min").value)){
+            mess4.classList.remove("d-none");
+        }
+        else{
+            mess4.classList.add("d-none");
+        }
+    })
+
     //button disabled 
     forma.addEventListener("change", function(){
-        if(style.selectedIndex!=0 && regExMejl.test(mail.value) && regExImePrezime.test(fName.value) && regExImePrezime.test(lName.value)){
+        if(style.selectedIndex!=0 && regExMejl.test(mail.value) && regExImePrezime.test(fName.value) && regExImePrezime.test(lName.value) ){
             submit.disabled=false;
         }
         else{
             submit.disabled=true;
         }
     })
+    var mess5 = document.createElement("p");
+    mess5.textContent="You need to fill out all the required fields.";
+    forma.appendChild(mess5);
+    mess5.classList.add("p-message");
+    mess5.classList.add("d-none");
 
+   
   }
 
  
